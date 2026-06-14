@@ -46,7 +46,7 @@ const AppDataSource = new DataSource({
     User, StudentProfile, CompanyProfile, SchoolProfile,
     Skill, PortfolioEvidence, Opportunity, Application,
   ],
-  synchronize: false,
+  synchronize: true,
   logging: false,
 })
 
