@@ -1,0 +1,169 @@
+/* Fonts loaded via <link> in layout.tsx — no @import here to avoid render blocking */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Base Layer ───────────────────────────────────────────────── */
+@layer base {
+  :root {
+    --nav-height: 4rem;
+  }
+
+  * {
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    scrollbar-gutter: stable;
+  }
+
+  body {
+    @apply bg-surface text-on-surface font-body;
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-headline text-on-surface;
+  }
+
+  /* Scrollbar styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-surface-container-low;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-outline-variant rounded-full;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-outline;
+  }
+}
+
+/* ─── Component Layer ──────────────────────────────────────────── */
+@layer components {
+
+  /* Glass navigation */
+  .glass-nav {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+  }
+
+  /* Editorial gradient hero */
+  .editorial-gradient {
+    background: linear-gradient(135deg, #0040a1 0%, #0056d2 100%);
+  }
+
+  /* Ambient shadow (tinted) */
+  .shadow-editorial {
+    box-shadow: 0 24px 48px -12px rgba(0, 24, 71, 0.08);
+  }
+  .shadow-elevated {
+    box-shadow: 0 8px 24px -6px rgba(0, 24, 71, 0.12);
+  }
+
+  /* No-scrollbar utility */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Material Symbols */
+  .material-symbols-outlined {
+    font-family: 'Material Symbols Outlined', sans-serif;
+    font-weight: normal;
+    font-style: normal;
+    font-size: 24px;
+    line-height: 1;
+    letter-spacing: normal;
+    text-transform: none;
+    display: inline-block;
+    white-space: nowrap;
+    word-wrap: normal;
+    direction: ltr;
+    -webkit-font-smoothing: antialiased;
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    transition: font-variation-settings 0.15s ease;
+  }
+  .icon-filled {
+    font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+
+  /* Score bar */
+  .score-bar {
+    @apply h-2 rounded-full bg-surface-container overflow-hidden;
+  }
+  .score-bar-fill {
+    @apply h-full rounded-full editorial-gradient transition-all duration-700 ease-out;
+  }
+
+  /* Skill pill */
+  .skill-pill {
+    @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-surface-container-low text-on-surface-variant border border-outline-variant/20 transition-all;
+  }
+  .skill-pill-primary {
+    @apply bg-primary-fixed text-on-primary-fixed border-primary/20;
+  }
+  .skill-pill-validated {
+    @apply bg-green-50 text-green-700 border-green-200;
+  }
+
+  /* Story ring */
+  .story-ring {
+    @apply rounded-full p-0.5 ring-2 ring-primary ring-offset-1;
+  }
+  .story-ring-unseen {
+    @apply ring-outline-variant;
+  }
+
+  /* Sidebar nav link */
+  .nav-link {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sm font-semibold text-on-surface-variant hover:bg-surface-container hover:text-on-surface transition-all;
+  }
+  .nav-link-active {
+    @apply bg-primary-fixed text-primary;
+  }
+
+  /* Card base */
+  .card {
+    @apply bg-surface-container-lowest rounded-xl shadow-editorial overflow-hidden;
+  }
+  .card-hover {
+    @apply hover:bg-surface-bright transition-colors cursor-pointer;
+  }
+
+  /* Match badge */
+  .match-badge-high {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-green-50 text-green-700;
+  }
+  .match-badge-mid {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-primary-fixed text-primary;
+  }
+  .match-badge-low {
+    @apply inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-surface-container text-on-surface-variant;
+  }
+}
+
+/* ─── Utilities ────────────────────────────────────────────────── */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .animate-delay-100 { animation-delay: 100ms; }
+  .animate-delay-200 { animation-delay: 200ms; }
+  .animate-delay-300 { animation-delay: 300ms; }
+  .animate-delay-400 { animation-delay: 400ms; }
+  .animate-delay-500 { animation-delay: 500ms; }
+}

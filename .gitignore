@@ -1,0 +1,57 @@
+# Dependencies
+node_modules/
+.npm
+.pnp.*
+
+# Build output
+.next/
+dist/
+build/
+out/
+.vercel/
+
+# Environment files
+.env
+.env.local
+.env.production
+.env.development
+backend/.env
+backend/.env.local
+frontend/.env.local
+
+!.env.example
+!.env.template
+
+# Backend / frontend local files
+backend/node_modules/
+frontend/node_modules/
+backend/uploads/
+frontend/.next/
+backend/dist/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Linters
+.eslintcache
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+*.swp
+
+# TypeScript
+*.tsbuildinfo
+next-env.d.ts
+
+# Test coverage
+coverage/
+.nyc_output/

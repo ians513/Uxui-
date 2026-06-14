@@ -1,0 +1,28 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pandoc --track-changes=all \"Avances/Acta de Constitución del Proyecto-formato.docx\" -o /tmp/acta.md)",
+      "Bash(pandoc --track-changes=all \"Avances/FORMATO DE REQUERIMIENTOS.docx\" -o /tmp/reqs.md)",
+      "Bash(SKILL_DIR=\"C:/Users/camil/AppData/Roaming/Claude/local-agent-mode-sessions/skills-plugin/250a0ef1-7b08-4b2f-bab6-8cc9c3181360/4cf5804e-771a-4109-b5a3-c87389af0328/skills/docx\")",
+      "Bash(python \"$SKILL_DIR/scripts/office/unpack.py\" \"C:/Users/camil/Downloads/red-talento-tp/Avances/Acta de Constitución del Proyecto-formato.docx\" \"/tmp/acta_unpacked/\")",
+      "Bash(python \"$SKILL_DIR/scripts/office/unpack.py\" \"C:/Users/camil/Downloads/red-talento-tp/Avances/FORMATO DE REQUERIMIENTOS.docx\" \"/tmp/reqs_unpacked/\")",
+      "Bash(pip install:*)",
+      "Bash(python3 -c \":*)",
+      "Bash(python -c \":*)",
+      "Read(//tmp/**)",
+      "Read(//c/tmp/**)",
+      "Bash(find /mnt -name acta_unpacked)",
+      "Bash(python -c \"import os; print\\(os.path.expandvars\\(''%TEMP%''\\)\\)\")",
+      "Bash(TEMP=\"C:/Users/camil/AppData/Local/Temp\")",
+      "Bash(python \"$SKILL_DIR/scripts/office/unpack.py\" \"C:/Users/camil/Downloads/red-talento-tp/Avances/Acta de Constitución del Proyecto-formato.docx\" \"$TEMP/acta_unpacked/\")",
+      "Bash(python \"$SKILL_DIR/scripts/office/unpack.py\" \"C:/Users/camil/Downloads/red-talento-tp/Avances/FORMATO DE REQUERIMIENTOS.docx\" \"$TEMP/reqs_unpacked/\")",
+      "Read(//c/Users/camil/AppData/Local/Temp/**)",
+      "Bash(npm run:*)",
+      "Bash(node -e ':*)",
+      "Bash(curl:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npx next:*)",
+      "Bash(node test-db-connection.js)"
+    ]
+  }
+}
